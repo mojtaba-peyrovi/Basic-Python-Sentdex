@@ -6,6 +6,7 @@ with open('list.csv') as csvfile:
         #print(row[0])
         #print(row[0],row[1])
 
+
     dates = []
     colors = []
 
@@ -17,8 +18,22 @@ with open('list.csv') as csvfile:
 
     print(dates)
     print(colors)
+    '''
+    try:
+        whatColor = input('what color do you want?')
 
+        coldex = colors.index(whatColor.lower())
+        theDate = dates[coldex]
+        print('the date is: ' , theDate)
+    except Exception as a:
+        print(a)
+    '''
     whatColor = input('what color do you want?')
-    coldex = colors.index(whatColor.lower())
-    theDate = dates[coldex]
-    print('the date is: ' , theDate)
+    if whatColor in colors:
+        coldex = colors.index(whatColor.lower())
+        theDate = dates[coldex]
+        print('the date is: ' , theDate)
+    else:
+        print('the color is not found')
+
+    print('continuing')
